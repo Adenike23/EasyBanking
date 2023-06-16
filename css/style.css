@@ -25,7 +25,7 @@ nav a{
 nav{
     display: flex;
     justify-content: space-between;
-    margin: 13px 125px;
+    padding: 1rem 5rem;
     align-items: center;
 }
 nav ul{
@@ -35,9 +35,12 @@ nav ul{
     align-items: center;
     margin-top: 8px;
 }
+.toggler{
+    display: none;
+}
 button{
     all: unset;
-    padding: 7px 20px;
+    padding: 10px 20px;
     color: var(--White);
     border-radius:50px;
     background: linear-gradient(to right, var(--Lime_Green), var(--Bright_Cyan));
@@ -46,53 +49,56 @@ main{
     display: flex;
     justify-content: space-between;
     background-color: var(--Light_Grayish_Blue);
+    align-items: center;
+}
+main, section, article{
+    padding: 5rem;
 }
 .main_txt{
-    width: 35%;
-    margin: 12rem 8rem;
+    width: 45%;
 }
 .main_txt h1{
     margin-bottom: 15px;
     font-weight: 300;
-    font-size: 55px;
+    font-size: 53px;
 }
 .main_txt h4{
     margin-bottom: 18px;
     font-weight: 300;
     font-size: 20px;
+    line-height: 1.4;
 }
 .main_img{
-    width: 35%;
-    padding-top: 20px;   
+    width: 42%;
 }
 section{
     background-color: var(--Very_Light_Gray);
-    padding: 25px 100px; 
 }
 .section_txt h1{
     margin-bottom: 15px;
     font-weight: 400;
-    font-size: 40px;
+    font-size: 44px;
 }
 .section_txt h3{
     margin-bottom: 50px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 300;
     width: 50%;
 }
 #easyBank{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 55px;
 }
 #easyBank h4{
+    font-size: 16px;
     margin: 25px 0px;
 }
 #easyBank p{
-    font-size: 14px;
+    font-size: 17px;
+    line-height: 1.5;
 }
 article{
-    padding: 5rem;
     background-color: var(--Light_Grayish_Blue);
 }
 article a:hover{
@@ -117,9 +123,6 @@ article h1{
     place-content: center;
     grid-column-gap: 50px;
 }
-.article1 img{
-    height: 30vh;
-}
 article img{
     width: 100%;
 }
@@ -127,7 +130,7 @@ article h5{
     margin: 7px 0px;
 }
 article h4{
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 300;
     margin-top: 12px;
 }
@@ -141,7 +144,12 @@ footer{
     padding-bottom: 2rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-top: 15px;
+}
+footer .about{
+    display: flex;
+    gap: 5rem;
 }
 footer a{
     color: var(--White);
@@ -153,16 +161,13 @@ footer i{
     padding: 1rem 0 0 6rem;
 }
 #easyBank_logo{
-    filter: invert(0);
+    filter: invert(0.3);
 }
 .icons{
     padding-top: 2rem;
 }
 .icons a{
     padding: 4px;
-}
-.icons a img{
-
 }
 .aboutUs a, .aboutUs2 a{
     display: block;
@@ -172,12 +177,152 @@ footer i{
 }
 .end{
     margin-top: 2rem;
-    width: 25%;
     text-align: center;
 }
 #copyright{
-    margin-top: 10px;
+    margin-top: 17px;
     font-size: 12px;
     color: var(--Light_Grayish_Blue);
     margin-right: 4em;
+}
+@media screen and (max-width: 1200px) {
+    .main_txt h1{
+        font-size: 50px;
+    }
+}
+@media screen and (max-width: 992px) {
+    nav{
+        padding: 1rem 2rem 1rem 2rem;
+    }
+    nav ul{
+        gap: 29px
+    }
+    main, section, article{
+        padding: 3rem;
+    }
+    .main_txt h1{
+        font-size: 40px;
+    }
+    .main_txt h4{
+        font-size: 17px;
+        line-height: 1.6;
+    }
+    .main_txt{
+        width: 50%;
+    }
+    #easyBank{
+        grid-column-gap: 38px;
+    }
+    .article_input{
+        grid-column-gap: 30px;
+    }
+    #easyBank p{
+        line-height: 1.5;
+    }
+    .footer_content{
+        padding-left: 2rem;
+    }
+    #copyright{
+        margin-right: 1rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    main, section, article{
+        padding: 2rem 2rem 3rem;
+    }
+    .main_txt h1{
+        font-size: 34px;
+    }
+    .main_txt h4{
+        font-size: 15px;
+        line-height: 2;
+    }
+    .main_txt{
+        width: 50%;
+        margin-top: 1rem;
+    }
+    .section_txt h3{
+        width: 75%;
+        line-height: 1.6 
+    }
+    #easyBank, .article_input{
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 43px;
+    }
+    nav button{
+        display: none;
+    }
+    footer .about{
+        gap: 10px;
+    }
+}
+@media screen and (max-width: 576px) {
+    nav ul{
+        position: fixed;
+        background-color: var(--Very_Light_Gray);
+        flex-direction: column;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40%;
+        padding: 2rem;
+        border-radius: 5px;
+    }
+    .toggler{
+        display: block;
+    }
+    .ri-close-fill{
+        display: none;
+    }
+    main{
+        flex-direction: column-reverse;
+    }
+    .main_img{
+        width: 90%;
+    }
+    .main_txt{
+        text-align: center;
+        width: 90%;
+    }
+    .section_txt{
+        text-align: center;
+        width: 93%;
+        margin: 0 auto;
+    }
+    .section_txt h1{
+        font-size: 37px;
+    }
+    .section_txt h3{
+        width: 100%
+    }
+    #easyBank, .article_input{
+        padding-right: 0;
+    }
+    footer{
+        flex-direction: column;
+    }
+    .footer_content{
+        padding-left: 0;
+    }
+    footer .about{
+        gap: 70px;
+        margin: 20px 0;
+    }
+    footer button{
+        padding: 7px 25px;
+    }
+}
+@media screen and (max-width: 480px) {
+    #easyBank, .article_input{
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 35px;
+    }
+    #easyBank{
+        text-align: center;
+    }
+    footer .about{
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
 }
