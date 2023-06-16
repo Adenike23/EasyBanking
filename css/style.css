@@ -263,8 +263,11 @@ footer i{
     nav button{
         display: none;
     }
+    footer{
+        gap: 6rem;
+    }
     footer .about{
-        gap: 10px;
+        gap: 15px;
     }
 }
 @media screen and (max-width: 576px) {
