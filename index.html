@@ -127,6 +127,7 @@
                 <div id="copyright">&copy; Easybank. All Rights Reserved</div>
             </div>
     </footer>
+    <a href=""><i class="ri-arrow-up-s-line"></i></a>
     <script>
         const openNav = document.querySelector(".ri-menu-fill");
         const closeNav = document.querySelector(".ri-close-fill");
@@ -147,6 +148,10 @@
                 openNav.style.display = "block"
                 closeNav.style.display = "none"
             })
+        })
+        const arrow = document.querySelector(".ri-arrow-up-s-line");
+        arrow.addEventListener("click", function() {
+            // navList.style.top = "40%"
         })
     </script>
 </body>

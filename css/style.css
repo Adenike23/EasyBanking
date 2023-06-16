@@ -185,6 +185,17 @@ footer i{
     color: var(--Light_Grayish_Blue);
     margin-right: 4em;
 }
+.ri-arrow-up-s-line{
+    font-size: 22px;
+    position: fixed;
+    bottom: 12px;
+    right: 30px;
+    color: var(--White);
+    background-color: var(--Lime_Green);
+    border-radius: 50%;
+    padding: 6px;
+
+}
 @media screen and (max-width: 1200px) {
     .main_txt h1{
         font-size: 50px;
@@ -316,6 +327,9 @@ footer i{
     }
 }
 @media screen and (max-width: 480px) {
+    nav ul{
+        width: 60%
+    }
     #easyBank, .article_input{
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 35px;
