@@ -261,15 +261,18 @@ footer i{
         position: fixed;
         background-color: var(--Very_Light_Gray);
         flex-direction: column;
-        top: 40%;
+        top: -40%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 40%;
         padding: 2rem;
         border-radius: 5px;
+        box-shadow: 0 0 30px #ffffffad;
+        transition: .7s;
     }
     .toggler{
         display: block;
+        font-size: 20px;
     }
     .ri-close-fill{
         display: none;
