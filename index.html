@@ -127,7 +127,7 @@
                 <div id="copyright">&copy; Easybank. All Rights Reserved</div>
             </div>
     </footer>
-    <a href=""><i class="ri-arrow-up-s-line"></i></a>
+    <div><i class="ri-arrow-up-s-line"></i></div>
     <script>
         const openNav = document.querySelector(".ri-menu-fill");
         const closeNav = document.querySelector(".ri-close-fill");
@@ -149,9 +149,19 @@
                 closeNav.style.display = "none"
             })
         })
-        const arrow = document.querySelector(".ri-arrow-up-s-line");
-        arrow.addEventListener("click", function() {
-            // navList.style.top = "40%"
+        const arrowUp = document.querySelector(".ri-arrow-up-s-line"); // to invoke or call the 'back-to-top' button
+        // code to make the 'back-to-top' button functional(once it is clicked, it moves to the top of the webpage)
+        arrowUp.addEventListener("click", function() {
+            document.body.scrollTop = 0; // for safari browsers
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        })
+        window.addEventListener("scroll", function() {
+            //when the user scrolls 30px from the top, show the 'back-to-top' button(first for crome, second for Safari)
+            if(document.documentElement.scrollTop >= 30 || document.body.scrollTop >= 30) {
+                arrowUp.style.display = "block"
+            } else{
+                arrowUp.style.display = "none"
+            }
         })
     </script>
 </body>
